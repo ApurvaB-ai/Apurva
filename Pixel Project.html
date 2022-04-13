@@ -1,0 +1,90 @@
+ <html>
+<html lang="en">
+<head> 
+  <meta charset="utf-8">
+    <title>contact us form validation using Javasript</title>
+    </head>
+    <body>
+<link rel="Stylesheet" href="styles.css">
+<a href="file:///C:/Users/amitb/Documents/Untitled-1.html"></a>
+<script>
+  function validate()  
+{  var Name = document.getElementById("Name").value;
+  var Phone = document.getElementById("Phone").value;
+  var Email = document.getElementById("Email").value;
+  var error_message = document.getElementById("error_message");
+  var text;
+       error_message.style.padding= "10px";
+
+if(Name.length <5){
+text = "please Enter valid name";
+error_message.innerHTML= text;
+return false;
+}
+if(Email.indexof("@")==-1 || Email.length<6)
+{
+text = "please Enter valid Email";
+error_message.innerHTML= text;
+return false;
+         }if(isNaN(Phone)|| Phone.length != 10)
+{
+text = "please Enter valid phone number";
+error_message.innerHTML= text;
+return false;
+         
+      }
+}// Function to generate OTP
+function generateOTP() {
+          
+     // Declare a digits variable 
+    // which stores all digits
+    var digits = '0123456789';
+    let OTP = '';
+    for (let i = 0; i < 4; i++ ) {
+        OTP += digits[Math.floor(Math.random() * 10)];
+    }
+    return OTP;
+}
+  
+document.write("OTP of 4 digits: ")
+document.write( generateOTP() );
+
+
+
+</script>
+
+    <div class="wrapper">
+        <h2> Pixel6 </h2>
+ <div id="error_message"></div> 
+ 
+ <form id ="myform"  method="post" action="#" onsubmit="return validate();">
+
+
+     <div class="input_field">
+    
+          <input type="text" placeholder="first Name" id="Name" required>
+          <input type="text" placeholder="Last Name" id="Name" required> 
+
+          </div>
+          <div class="input_field">
+<select name="sim card" id="sim card">
+    <option value="Reliance">Reliance Jio</option>
+    <option value="Idea">Idea</option>
+    <option value="Vodafone">Vodafone</option>
+
+            <input type="Number" placeholder="Phone" id="Phone" required>
+          </div>                                                                                                                                                                                                       
+          <div class="input_field">
+            <input type="text" placeholder="Email" id="Email" required>
+          </div>
+            <div class="btn">
+<a href="file:///C:/Users/amitb/Documents/Untitled-1.html">click to next page</a>
+<input type="submit" value="submit" name="submit">
+
+
+            </div>
+          </form>
+    
+   
+</body>
+</html>
